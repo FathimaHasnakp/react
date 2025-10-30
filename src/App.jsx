@@ -5,6 +5,7 @@
 // import Welcome from './embedding-expression/welcome'
 
 
+
 // function App() {
 
 //   return (
@@ -25,7 +26,10 @@
 // import UsingProps from './Class-components/UsingProps'
 // import Basic from './Class-components/Basic'
 import { Component } from "react";
-import Wrkcounter from "./Class-components/Wrkcounter";
+import UnMounting from "./Class-components/Life cycle methods/UnMounting";
+// import Updating from "./Class-components/Life cycle methods/Updating";
+// import Mounting from "./Class-components/Life cycle methods/Mounting";
+// import Wrkcounter from "./Class-components/Wrkcounter";
 
 export default class App extends Component {
   render() {
@@ -34,8 +38,10 @@ export default class App extends Component {
     {/* <Basic/> */}
     {/* <UsingProps name="hasna"/> */}
     {/* <Counter/> */}
-    <Wrkcounter/>
-
+    {/* <Wrkcounter/> */}
+    {/* <Mounting/> */}
+{/* <Updating/> */}
+<UnMounting/>
 
       </div>
     )
