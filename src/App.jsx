@@ -1,10 +1,17 @@
-// import './App.css'
-// import RenderingList from './embedding-expression/RenderingList'
+import './App.css'
+// import SpecificValue from './Functional-components/hooks/UseEffect-Hooks/SpecificValue'
+// import OnMount from './Functional-components/hooks/UseEffect-Hooks/OnMount'
+// import ProfileForm from './Functional-components/hooks/UseState/ProfileForm'
+// import NameForm from './Functional-components/hooks/UseState/NameForm'
+import RenderingList from './embedding-expression/RenderingList'
 // import Condition from './embedding-expression/condition'
 // import Calling_function from './embedding-expression/calling_function'
 // import Welcome from './embedding-expression/welcome'
 
-import UserList from "./Functional-components/hooks/UseEffect-Hooks/UserList"
+// import ToggleButton from "./Functional-components/UseState/ToggleButton"
+
+
+// import UserList from "./Functional-components/hooks/UseEffect-Hooks/UserList"
 
 // import Timer from "./Functional-components/hooks/UseEffect-Hooks/Timer"
 
@@ -24,8 +31,8 @@ function App() {
 {/* {/----------Embedding-expression----------} */ }
 {/* <Welcome/> */ }
 {/* <Calling_function/> */ }
-{/* <Condition /> */ }
-{/* <RenderingList/> */ }
+{/* { <Condition /> } */}
+{ <RenderingList/>  }
 
 
 {/* {/*-------- functional components *---------------/} */}
@@ -35,7 +42,12 @@ function App() {
 
 {/* hooks & life cycle methods */}
 {/* <Timer/> */}
-<UserList/>
+{/* <UserList/> */}
+{/* <ToggleButton/> */}
+{/* <NameForm/> */}
+{/* <ProfileForm/> */}
+{/* <OnMount/> */}
+{/* <SpecificValue/> */}
     </>
   )
  }
