@@ -1,12 +1,24 @@
-import './App.css'
+// import { Link, Route, Routes } from 'react-router-dom'
+// import { Route, Routes } from 'react-router-dom'
+// import './App.css'
+// import Product from './dynamic-routing/Product'
+// import ProductDetailPage from './dynamic-routing/ProductDetailPage'
+// import Home from './react-router-dom/Home'
+// import About from './react-router-dom/About'
+// import { UserApiContext, UserApiProvider } from './Functional-components/hooks/UseContext-hooks/Userlist/UserApiContext'
+// import UserList from './Functional-components/hooks/UseContext-hooks/Userlist/UserList'
+// import Home from './Functional-components/hooks/UseContext-hooks/dark&LightMode/Home'
+// import { ThemeProvider } from './Functional-components/hooks/UseContext-hooks/dark&LightMode/ThemeContext'
+// import OnMount from './Functional-components/LifeCyleMethods/UseEffect-Hooks/OnMount'
 // import SpecificValue from './Functional-components/hooks/UseEffect-Hooks/SpecificValue'
-// import OnMount from './Functional-components/hooks/UseEffect-Hooks/OnMount'
 // import ProfileForm from './Functional-components/hooks/UseState/ProfileForm'
 // import NameForm from './Functional-components/hooks/UseState/NameForm'
-import RenderingList from './embedding-expression/RenderingList'
+// import RenderingList from './embedding-expression/RenderingList'
 // import Condition from './embedding-expression/condition'
 // import Calling_function from './embedding-expression/calling_function'
 // import Welcome from './embedding-expression/welcome'
+
+import Navbar from "./nested-routing/Navbar"
 
 // import ToggleButton from "./Functional-components/UseState/ToggleButton"
 
@@ -28,31 +40,65 @@ function App() {
 
   return (
     <>
-{/* {/----------Embedding-expression----------} */ }
-{/* <Welcome/> */ }
-{/* <Calling_function/> */ }
-{/* { <Condition /> } */}
-{ <RenderingList/>  }
+      {/* {/----------Embedding-expression----------} */}
+      {/* <Welcome/> */}
+      {/* <Calling_function/> */}
+      {/* { <Condition /> } */}
+      {/* <RenderingList/>   */}
 
 
-{/* {/*-------- functional components *---------------/} */}
-{/* <Basic/> */}
-{/* <State/> */}
-{/* <Props/> */}
+      {/* {/*-------- functional components *---------------/} */}
+      {/* <Basic/> */}
+      {/* <State/> */}
+      {/* <Props/> */}
 
-{/* hooks & life cycle methods */}
-{/* <Timer/> */}
-{/* <UserList/> */}
-{/* <ToggleButton/> */}
-{/* <NameForm/> */}
-{/* <ProfileForm/> */}
-{/* <OnMount/> */}
-{/* <SpecificValue/> */}
+      {/* hooks & life cycle methods */}
+      {/* <Timer/> */}
+      {/* <UserList/> */}
+      {/* <ToggleButton/> */}
+      {/* <NameForm/> */}
+      {/* <ProfileForm/> */}
+      {/* <OnMount/> */}
+      {/* <SpecificValue/> */}
+
+
+      {/* -------useContext hook------------ */}
+      {/* { <ThemeProvider> */}
+      {/* <Home/>
+  </ThemeProvider>  
+   } */}
+      {/* <UserApiProvider>
+    <UserList/>
+   </UserApiProvider> */}
+
+
+      {/* ----react-router-dom--------------- */}
+      {/* 1,----basic routing----- */}
+      {/* <div>
+        <nav>
+          <Link to='/'>Home</Link><br />
+          <Link to='/about'>About</Link>
+        </nav>
+      </div>
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+      </Routes> */}
+
+      {/* ----------2,dynamic-routing---------- */}
+      {/* <Routes>
+        <Route path='/'element={<Product/>}/>
+        <Route path='/products/:id' element={<ProductDetailPage/>}/>
+      </Routes> */}
+
+      {/* -------3,nested-routing------ */}
+      <Navbar/>
     </>
   )
- }
+}
 
- export default App
+export default App
 
 
 //------------ class components----------------------//
@@ -71,14 +117,14 @@ function App() {
 //   render() {
 //     return (
 //       <div>
-        {/* <Basic/> */}
-        {/* <UsingProps name="hasna"/> */}
-        {/* <Counter/> */}
-        {/* <Wrkcounter/> */}
-        {/* <Mounting/> */}
-        {/* <Updating/> */}
-        {/* <UnMounting/> */}
-        // <ButtonUnMount />
+{/* <Basic/> */ }
+{/* <UsingProps name="hasna"/> */ }
+{/* <Counter/> */ }
+{/* <Wrkcounter/> */ }
+{/* <Mounting/> */ }
+{/* <Updating/> */ }
+{/* <UnMounting/> */ }
+// <ButtonUnMount />
 
 //       </div>
 //     )
