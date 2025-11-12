@@ -1,6 +1,11 @@
 // import { Link, Route, Routes } from 'react-router-dom'
 // import { Route, Routes } from 'react-router-dom'
-// import './App.css'
+// import { Route, Routes } from 'react-router-dom'
+import './App.css'
+import Crud from './local-storage/crud'
+// import ProfileCard from './ProfileCard/ProfileCard'
+// import SimpleForm from './Form/SimpleForm'
+// import Form from './Form/Form'
 // import Product from './dynamic-routing/Product'
 // import ProductDetailPage from './dynamic-routing/ProductDetailPage'
 // import Home from './react-router-dom/Home'
@@ -18,7 +23,13 @@
 // import Calling_function from './embedding-expression/calling_function'
 // import Welcome from './embedding-expression/welcome'
 
-import Navbar from "./nested-routing/Navbar"
+// import Navbar from "./nested-routing/Navbar"
+// import Home from './nested-routing/pages/Home'
+// import About from './nested-routing/pages/About'
+// import Service from './nested-routing/pages/Service'
+// import WebDev from './nested-routing/pages/services/WebDev'
+// import AppDev from './nested-routing/pages/services/AppDev'
+// import Design from './nested-routing/pages/services/Design '
 
 // import ToggleButton from "./Functional-components/UseState/ToggleButton"
 
@@ -93,7 +104,30 @@ function App() {
       </Routes> */}
 
       {/* -------3,nested-routing------ */}
-      <Navbar/>
+      {/* <Navbar/>
+      <div className="container-app">
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/about' element={<About/>}/> */}
+
+          {/* nested routing starts here */}
+          {/* <Route path='/service' element={<Service/>}>
+          <Route path='web-development' element={<WebDev/>}/>
+          <Route path='app-development' element={<AppDev/>}/>
+          <Route path='design' element={<Design/>}/>
+          </Route>
+        </Routes>
+      </div> */}
+
+      {/* <ProfileCard/> */}
+
+      {/* ------------forms------- */}
+      {/* <SimpleForm/> */}
+      {/* <Form/> */}
+
+      {/* local-storage */}
+      <Crud/>
+    
     </>
   )
 }
