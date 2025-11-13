@@ -103,6 +103,23 @@ const Crud = () => {
         setError({})
     }
 
+    const handleDelete = (id) => {
+        setUsers(users.filter(user => user.id !== id));
+    }
+
+    const handleClearAll = () => {
+        if(window.confirm('Are you sure you want to clear all data? this section cannot be undone.')){
+        setUsers([]);
+        localStorage.removeItem("users");
+        //also clear the form if in edit mode
+        if(editMode){
+            setFormData({id:'',name:'', age:'', email:''});
+            setEditMode(false);
+            setError({});
+        }
+        }
+    }
+
   return (
     <div className='fornew'>
        <h1>React CURD -Simple Form</h1>
@@ -133,6 +150,18 @@ const Crud = () => {
        <div style={{display:'flex', justifyContent:'space-between',alignItems:'center',marginBottom:'10px'}}>
         <h2>User List</h2>
         {/* clear data items */}
+        {users.length > 0 && (
+            <button onClick={handleClearAll}  style={{
+                background: '#dc345',
+                color:'white',
+                border:'none',
+                padding:'8px 12px',
+                borderRadius:'4px',
+                cursor:'pointer',
+                marginLeft:'30px'
+            }}>Clear All data</button>
+        )
+        }
        </div>
 
        {users.length > 0 ? (
@@ -153,7 +182,7 @@ const Crud = () => {
                     <td>{us.age}</td>
                     <td>
                         <button onClick={() => handleEdit(us)}>Edit</button>
-                        <button style={{marginLeft:'10px'}}>Delete</button>
+                        <button onClick={() => handleDelete(us.id)} style={{marginLeft:'10px'}}>Delete</button>
                     </td>
 
                 </tr>
