@@ -7,7 +7,7 @@ const Crud = () => {
         id: '',
         name: '',
         email: '',
-        age: ''
+        age: '',
     })
 
     const [users, setUsers] = useState([]);
@@ -15,109 +15,156 @@ const Crud = () => {
     const [error, setError] = useState({});
     const [isloading, setIsLoading] = useState(false);
 
-    //Load  users from loaclstorage
+    //load users from localstorage
     useEffect(() => {
         const stored = localStorage.getItem("users");
-        if (stored) {
-            try {
+        if(stored){
+            try{
                 const parsedUser = JSON.parse(stored);
                 setUsers(parsedUser);
 
-            } catch (error) {
+            } catch(error) {
                 console.error("Error parsing data", error);
-                localStorage.removeItem("users");
-
+                localStorage.removeItem("users");//clear corrupted data
             }
         }
-        setIsLoading(true);
-    }, [])
+        setIsLoading(true); //mark as load
+    },[])
 
-    //save users local storage//
+    //save users to localstorage
     useEffect(() => {
-        if (isloading) {
-            localStorage.setItem("users", JSON.stringify(users))
-        }
-    }, [users, isloading])
+        if(isloading)
+            localStorage.setItem("users",JSON.stringify(users))
+    },[users, isloading])
+  
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
 
         setFormData(prev => ({
             ...prev,
-            [name]: value
+            [name]:value
         }))
     }
 
-    //    validation 
-
-    const validate = () => {
+    //validation
+    const validate = () =>{
         const newErrors = {};
-        const { name, email, age } = formData;
+        const {name, email, age} =formData;
 
-        if (!name.trim()) newErrors.name = 'Name is required!';
+        if(!name.trim()) newErrors.name = 'Name is required!';
 
-        if (!email) newErrors.email = 'Email is required!';
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = 'Email is required';
+        if(!email.trim()) newErrors.email = 'Email is required';
+        else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.age = "email is validate";
 
-        if (!age) newErrors.age = "Age is reqired";
-        else if (isNaN(age) || age < 1 || age > 120) newErrors.age = "Age must not be between 1 and 120";
-
+        if(!age.trim()) newErrors.age = 'age is required';
+        else if(isNaN(age) || age < 1 || age > 120) newErrors.age = "Age must be between 1 and 120"
+        
 
         return newErrors;
     }
 
     //form submission
     const handleSubmit = (e) => {
-        e.preventDefault();
-        const validationErrors = validate();
+        e. preventDefault();
+        const validateErrors =  validate();
 
-        if (Object.keys(validationErrors).length > 0) {
-            setError(validationErrors);
+        if(Object.keys(validateErrors).length > 0){
+            setError(validateErrors);
             return;
         }
 
-        if (editMode) {
-            setUsers(users.map(user => user.id === formData.id ? formData : user))
-            setEditMode(false);
+        if (editMode){
+        setUsers(users.map(user => user.id === formData.id ? formData : user));
+        setEditMode(false);
         } else {
-            const newUser = { ...formData, id: Date.now().toString() };
+            const newUser = {...formData, id:Date.now().toString()};
             setUsers([...users, newUser])
         }
-        setFormData({
-            id: '',
-            name: '',
-            email: '',
-            age: ''
 
+        setFormData({
+             id: '',
+             name: '',
+             email: '',
+             age: '',
         });
+
         setError({});
     }
 
-    return (
-        <div className='formnew'>
-            <h1>React CRUD - Simple Form</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <input type="text" name='name' onChange={handleChange} value={formData.name} placeholder='your name' />
-                    {error.name && <p style={{ color: 'red' }}>{error.name}</p>}
-                </div>
+    const handleEdit = (us) => {
+        setFormData(us);
+        setEditMode(true);
+    }
 
-                <div>
-                    <input type="email" name='email' onChange={handleChange} value={formData.email} placeholder='Your email' />
-                    {error.email && <p style={{ color: 'red' }}>{error.email}</p>}
+    const handleCancel = () => {
+        setFormData({id:'',name:'',email:'', age:''});
+        setEditMode(false);
+        setError({})
+    }
 
-                </div>
-
-                <div>
-                    <input type="number" name='age' value={formData.age} onChange={handleChange} placeholder='Your age' />
-                    {error.age && <p style={{ color: 'red' }}>{error.age}</p>}
-
-                </div>
-                <button type='submit'>{editMode ? 'Update User' : 'Add User'}</button>
-            </form>
-
+  return (
+    <div className='fornew'>
+       <h1>React CURD -Simple Form</h1>
+       <form onSubmit={handleSubmit}>
+        {/* Name */}
+        <div>
+            <input type="text" name='name' onChange={handleChange} value={formData.name} placeholder='Your name' />
+            {error.name && <p style={{color:'red'}}>{error.name}</p>}
         </div>
-    )
+
+        {/* email */}
+        <div>
+            <input type="email" name='email' value={formData.email} onChange={handleChange} placeholder='Your email' />
+             {error.email && <p style={{color:'red'}}>{error.email}</p>}
+        </div>
+        {/* age */}
+        <div>
+            <input type="number" name='age' value={formData.age} onChange={handleChange} placeholder='Your age' />
+             {error.age && <p style={{color:'red'}}>{error.age}</p>}
+        </div>
+        <button type='submit'>{editMode ? 'Update User' : 'Add User'}</button>
+       {editMode && (
+        <button type='button' onClick={handleCancel} style={{marginLeft:'10px'}}>cancel</button>
+       )}
+       </form>
+
+       <hr />
+       <div style={{display:'flex', justifyContent:'space-between',alignItems:'center',marginBottom:'10px'}}>
+        <h2>User List</h2>
+        {/* clear data items */}
+       </div>
+
+       {users.length > 0 ? (
+        <table>
+           <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Action</th>
+            </tr>
+           </thead>
+           <tbody>
+            {users.map(us => (
+                <tr key={us.id}>
+                    <td>{us.name}</td>
+                    <td>{us.email}</td>
+                    <td>{us.age}</td>
+                    <td>
+                        <button onClick={() => handleEdit(us)}>Edit</button>
+                        <button style={{marginLeft:'10px'}}>Delete</button>
+                    </td>
+
+                </tr>
+            ))}
+           </tbody>
+        </table>
+       ):(
+          <p>No users added yet.</p>
+       )}
+    </div>
+  )
 }
 
 export default Crud
