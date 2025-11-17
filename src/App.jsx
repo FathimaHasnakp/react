@@ -1,8 +1,11 @@
 // import { Link, Route, Routes } from 'react-router-dom'
 // import { Route, Routes } from 'react-router-dom'
 // import { Route, Routes } from 'react-router-dom'
+import { Axios } from 'axios'
 import './App.css'
-import Todo from './Todo/Todo'
+import AxiosPost from './axios/AxiosPost'
+// import AxiosGet from './axios/AxiosGet'
+// import Todo from './Todo/Todo'
 // import Crud from './local-storage/crud'
 // import ProfileCard from './ProfileCard/ProfileCard'
 // import SimpleForm from './Form/SimpleForm'
@@ -130,10 +133,12 @@ function App() {
       {/* <Crud/> */}
 
 
-      <Todo/>
+      {/* <Todo/> */}
 
 
-     
+{/* ---------------axios--------------- */}
+{/* <AxiosGet/> */}
+     <AxiosPost/>
     </>
   )
 }
