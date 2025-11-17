@@ -2,7 +2,8 @@
 // import { Route, Routes } from 'react-router-dom'
 // import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Crud from './local-storage/crud'
+import Todo from './Todo/Todo'
+// import Crud from './local-storage/crud'
 // import ProfileCard from './ProfileCard/ProfileCard'
 // import SimpleForm from './Form/SimpleForm'
 // import Form from './Form/Form'
@@ -126,8 +127,13 @@ function App() {
       {/* <Form/> */}
 
       {/* local-storage */}
-      <Crud/>
-    
+      {/* <Crud/> */}
+
+
+      <Todo/>
+
+
+     
     </>
   )
 }
