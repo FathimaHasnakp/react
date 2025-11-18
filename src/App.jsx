@@ -3,7 +3,11 @@
 // import { Route, Routes } from 'react-router-dom'
 import { Axios } from 'axios'
 import './App.css'
-import AxiosPost from './axios/AxiosPost'
+import UseMemoTwoCounters from './Functional-components/hooks/UseContext-hooks/Userlist/UseMemoTwoCounters '
+// import AxiosDelete from './axios/AxiosDelete'
+// import UseMemo from './Functional-components/hooks/UseContext-hooks/Userlist/UseMemo'
+// import AxiosPut from './axios/AxiosPut'
+// import AxiosPost from './axios/AxiosPost'
 // import AxiosGet from './axios/AxiosGet'
 // import Todo from './Todo/Todo'
 // import Crud from './local-storage/crud'
@@ -70,6 +74,7 @@ function App() {
       {/* hooks & life cycle methods */}
       {/* <Timer/> */}
       {/* <UserList/> */}
+      <UseMemoTwoCounters/>
       {/* <ToggleButton/> */}
       {/* <NameForm/> */}
       {/* <ProfileForm/> */}
@@ -138,7 +143,9 @@ function App() {
 
 {/* ---------------axios--------------- */}
 {/* <AxiosGet/> */}
-     <AxiosPost/>
+     {/* <AxiosPost/> */}
+     {/* <AxiosPut/> */}
+     {/* <AxiosDelete/> */}
     </>
   )
 }
