@@ -3,8 +3,9 @@
 // import { Route, Routes } from 'react-router-dom'
 import { Axios } from 'axios'
 import './App.css'
-import UseRef from './Functional-components/LifeCyleMethods/UseRef'
-// import UseMemoTwoCounters from './Functional-components/LifeCyleMethods/UseMemoTwoCounters '
+// import UseRef from './Functional-components/LifeCyleMethods/UseRef'
+// import UseMemo from './Functional-components/LifeCyleMethods/UseMemo '
+import ProductPage from './desighn/dynamic-routing-rv-example/ProductPage'
 // import AxiosDelete from './axios/AxiosDelete'
 // import UseMemo from './Functional-components/hooks/UseContext-hooks/Userlist/UseMemo'
 // import AxiosPut from './axios/AxiosPut'
@@ -75,8 +76,8 @@ function App() {
       {/* hooks & life cycle methods */}
       {/* <Timer/> */}
       {/* <UserList/> */}
-      {/* <UseMemoTwoCounters/> */}
-      <UseRef/>
+      {/* <UseRef/> */}
+      <UseMemo/>
       {/* <ToggleButton/> */}
       {/* <NameForm/> */}
       {/* <ProfileForm/> */}
@@ -148,6 +149,10 @@ function App() {
      {/* <AxiosPost/> */}
      {/* <AxiosPut/> */}
      {/* <AxiosDelete/> */}
+
+
+     {/* ----------dynamic routing real world example------ */}
+     <ProductPage/>
     </>
   )
 }
