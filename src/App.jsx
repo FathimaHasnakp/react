@@ -3,7 +3,10 @@
 // import { Route, Routes } from 'react-router-dom'
 import { Axios } from 'axios'
 import './App.css'
-import UseMemo from './Functional-components/hooks/UseMemo '
+import { Route, Routes } from 'react-router-dom'
+import ProductDetails from './desighn/dynamic-routing-rv-example/ProductDetails'
+import ProductPage from './desighn/dynamic-routing-rv-example/ProductPage'
+// import UseMemo from './Functional-components/hooks/UseMemo '
 // import UseRef from './Functional-components/LifeCyleMethods/UseRef'
 // import UseMemo from './Functional-components/LifeCyleMethods/UseMemo '
 // import ProductPage from './desighn/dynamic-routing-rv-example/ProductPage'
@@ -79,7 +82,7 @@ function App() {
       {/* <Timer/> */}
       {/* <UserList/> */}
       {/* <UseRef/> */}
-      <UseMemo/>
+      {/* <UseMemo/> */}
       {/* <ToggleButton/> */}
       {/* <NameForm/> */}
       {/* <ProfileForm/> */}
@@ -155,9 +158,10 @@ function App() {
 
      {/* ----------dynamic routing real world example------ */}
      {/* <ProductPage/> */}
-     {/* <Route path='/'element={<ProductPage/>}/>
-     <Route path='/product/:id' element={<ProductDetails/>}/>
-     </Route> */}
+     <Routes>
+        <Route path='/' element={<ProductPage />} />
+        <Route path='/product/:id' element={<ProductDetails />} />
+      </Routes>
     </>
   )
 }
