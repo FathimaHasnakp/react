@@ -3,11 +3,13 @@
 // import { Route, Routes } from 'react-router-dom'
 import { Axios } from 'axios'
 import './App.css'
+import UseMemo from './Functional-components/hooks/UseMemo '
 // import UseRef from './Functional-components/LifeCyleMethods/UseRef'
 // import UseMemo from './Functional-components/LifeCyleMethods/UseMemo '
-import ProductPage from './desighn/dynamic-routing-rv-example/ProductPage'
+// import ProductPage from './desighn/dynamic-routing-rv-example/ProductPage'
+// import { Route } from 'react-router-dom'
+// import ProductDetails from './desighn/dynamic-routing-rv-example/ProductDetails'
 // import AxiosDelete from './axios/AxiosDelete'
-// import UseMemo from './Functional-components/hooks/UseContext-hooks/Userlist/UseMemo'
 // import AxiosPut from './axios/AxiosPut'
 // import AxiosPost from './axios/AxiosPost'
 // import AxiosGet from './axios/AxiosGet'
@@ -152,7 +154,10 @@ function App() {
 
 
      {/* ----------dynamic routing real world example------ */}
-     <ProductPage/>
+     {/* <ProductPage/> */}
+     {/* <Route path='/'element={<ProductPage/>}/>
+     <Route path='/product/:id' element={<ProductDetails/>}/>
+     </Route> */}
     </>
   )
 }

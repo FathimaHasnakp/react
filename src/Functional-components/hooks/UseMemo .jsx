@@ -12,13 +12,13 @@ const UseMemo = () => {
         setCounterTwo(counterTwo + 1)
     }
 
-    const isEven =         useMemo(() => {
-            let i = 0;
-            while (i < 200000000) i++
-            return counterOne % 2 === 0
-        }, [counterOne])
+    const isEven = useMemo(() => {
+        let i = 0;
+        while (i < 200000000) i++
+        return counterOne % 2 === 0
+    }, [counterOne])
 
-        
+
 
 
     return (
@@ -27,7 +27,7 @@ const UseMemo = () => {
                 CounterOne : {counterOne}
 
             </button>
-            <span>{  isEven  ? 'even' : 'odd'}</span>
+            <span>{isEven ? 'even' : 'odd'}</span>
 
             <br /> <br />
 
