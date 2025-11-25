@@ -1,11 +1,12 @@
 // import { Link, Route, Routes } from 'react-router-dom'
 // import { Route, Routes } from 'react-router-dom'
 // import { Route, Routes } from 'react-router-dom'
-import { Axios } from 'axios'
+// import { Axios } from 'axios'
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import ProductDetails from './desighn/dynamic-routing-rv-example/ProductDetails'
-import ProductPage from './desighn/dynamic-routing-rv-example/ProductPage'
+import BasicHookForm from './react-hook-form/BasicHookForm'
+// import { Route, Routes } from 'react-router-dom'
+// import ProductDetails from './desighn/dynamic-routing-rv-example/ProductDetails'
+// import ProductPage from './desighn/dynamic-routing-rv-example/ProductPage'
 // import UseMemo from './Functional-components/hooks/UseMemo '
 // import UseRef from './Functional-components/LifeCyleMethods/UseRef'
 // import UseMemo from './Functional-components/LifeCyleMethods/UseMemo '
@@ -158,10 +159,14 @@ function App() {
 
      {/* ----------dynamic routing real world example------ */}
      {/* <ProductPage/> */}
-     <Routes>
+     {/* <Routes>
         <Route path='/' element={<ProductPage />} />
         <Route path='/product/:id' element={<ProductDetails />} />
-      </Routes>
+      </Routes> */}
+
+
+      {/* ------------react hook form------------ */}
+      <BasicHookForm/>
     </>
   )
 }
