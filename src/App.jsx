@@ -3,7 +3,8 @@
 // import { Route, Routes } from 'react-router-dom'
 // import { Axios } from 'axios'
 import './App.css'
-import BasicHookForm from './react-hook-form/BasicHookForm'
+import YupForm from './Form/yup-react-hook-form/YupForm'
+// import BasicHookForm from './react-hook-form/BasicHookForm'
 // import { Route, Routes } from 'react-router-dom'
 // import ProductDetails from './desighn/dynamic-routing-rv-example/ProductDetails'
 // import ProductPage from './desighn/dynamic-routing-rv-example/ProductPage'
@@ -166,7 +167,10 @@ function App() {
 
 
       {/* ------------react hook form------------ */}
-      <BasicHookForm/>
+      {/* <BasicHookForm/> */}
+
+      {/* ----------------yup with react hook form--------------------- */}
+      <YupForm/>
     </>
   )
 }
