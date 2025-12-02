@@ -3,7 +3,9 @@
 // import { Route, Routes } from 'react-router-dom'
 // import { Axios } from 'axios'
 import './App.css'
-import YupForm from './Form/yup-react-hook-form/YupForm'
+// import ShoppingCart from './Components/ShoppingCart'
+// import Counter from './Components/Counter'
+// import YupForm from './Form/yup-react-hook-form/YupForm'
 // import BasicHookForm from './react-hook-form/BasicHookForm'
 // import { Route, Routes } from 'react-router-dom'
 // import ProductDetails from './desighn/dynamic-routing-rv-example/ProductDetails'
@@ -129,8 +131,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/> */}
 
-          {/* nested routing starts here */}
-          {/* <Route path='/service' element={<Service/>}>
+      {/* nested routing starts here */}
+      {/* <Route path='/service' element={<Service/>}>
           <Route path='web-development' element={<WebDev/>}/>
           <Route path='app-development' element={<AppDev/>}/>
           <Route path='design' element={<Design/>}/>
@@ -151,16 +153,16 @@ function App() {
       {/* <Todo/> */}
 
 
-{/* ---------------axios--------------- */}
-{/* <AxiosGet/> */}
-     {/* <AxiosPost/> */}
-     {/* <AxiosPut/> */}
-     {/* <AxiosDelete/> */}
+      {/* ---------------axios--------------- */}
+      {/* <AxiosGet/> */}
+      {/* <AxiosPost/> */}
+      {/* <AxiosPut/> */}
+      {/* <AxiosDelete/> */}
 
 
-     {/* ----------dynamic routing real world example------ */}
-     {/* <ProductPage/> */}
-     {/* <Routes>
+      {/* ----------dynamic routing real world example------ */}
+      {/* <ProductPage/> */}
+      {/* <Routes>
         <Route path='/' element={<ProductPage />} />
         <Route path='/product/:id' element={<ProductDetails />} />
       </Routes> */}
@@ -170,7 +172,9 @@ function App() {
       {/* <BasicHookForm/> */}
 
       {/* ----------------yup with react hook form--------------------- */}
-      <YupForm/>
+      {/* <YupForm/> */}
+      {/* <Counter/> */}
+      <ShoppingCart />
     </>
   )
 }
